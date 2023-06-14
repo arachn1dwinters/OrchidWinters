@@ -1,0 +1,104 @@
+body {
+    color: #F4E5C3;
+    font-weight: 900;
+    font-family: 'IBM Plex Sans';;
+    background-image: linear-gradient(to bottom, #248082, #3ACBB7, #E6BC66, #BB6152);
+}
+
+div.section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 1000px;
+}
+
+div.section#home {
+    background-image: linear-gradient(to bottom, #248082, #3ACBB7);
+}
+
+div.section#experience {
+    background-image: linear-gradient(to bottom, #3ACBB7, #E6BC66);
+}
+
+div.section#projects {
+    background-image: linear-gradient(to bottom, #E6BC66, #BB6152);
+}
+
+div.section#contact {
+    background-color: #BB6152;
+}
+
+span.break {
+    width: 100%;
+    display: block;
+}
+
+div#nav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    flex-direction: row;
+}
+
+div#nav > h2 > a {
+    text-decoration: none;
+    color: #D5E5D5;
+}
+
+div#nav > h2 {
+    position: relative;
+}
+
+div#nav > h2::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #59382B;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform .3s ease-in-out;
+    border-radius: 3px;
+    z-index:-1;
+}
+
+div#nav > h2:hover:has(a:hover)::before {
+    transform-origin: top;
+    transform: scaleY(1);
+}
+
+a.projectLink, a.email {
+    position: relative;
+    text-decoration: underline;
+    color: #F4E5C3;
+}
+
+a.projectLink::before, a.email::before {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: blue;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .4s ease-in-out;
+    border-radius: 2px;
+}
+
+a.projectLink:hover::before, a.email:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+div#hello {
+    padding-top: 10000px;
+}
+
+ul {
+    list-style-type: none;
+}
